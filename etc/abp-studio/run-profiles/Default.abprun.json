@@ -1,0 +1,13 @@
+﻿{
+  "applications": {
+    "MyTheme.Web": {
+      "type": "dotnet-project",
+      "launchUrl": "https://localhost:44383",
+      "path": "../../../src/MyTheme.Web/MyTheme.Web.csproj",
+      "kubernetesService": ".*-web$",
+      "execution": {
+        "order": 2
+      }
+    }
+  }
+}

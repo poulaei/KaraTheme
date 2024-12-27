@@ -1,0 +1,410 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <Import Project="..\..\common.props" />
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>MyTheme.Web</RootNamespace>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <Version></Version>
+    <CopyLocalLockFileAssemblies>True</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+  <ItemGroup Condition="Exists('./openiddict.pfx')">
+    <None Remove="openiddict.pfx" />
+    <EmbeddedResource Include="openiddict.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pages\**\*.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pages\**\*.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\assets\img\about\about__five__01.png" />
+    <Content Remove="wwwroot\assets\img\about\home__three__about__05.png" />
+    <Content Remove="wwwroot\assets\img\about\home__three__about__06.png" />
+    <Content Remove="wwwroot\assets\img\about\home__three__about__07.png" />
+    <Content Remove="wwwroot\assets\img\about\home__two__about__01.jpg" />
+    <Content Remove="wwwroot\assets\img\about\home__two__about__02.jpg" />
+    <Content Remove="wwwroot\assets\img\about\home__two__about__03.png" />
+    <Content Remove="wwwroot\assets\img\about\home__two__about__04.png" />
+    <Content Remove="wwwroot\assets\img\bg\about__page__01.png" />
+    <Content Remove="wwwroot\assets\img\bg\home__one__section__one.svg" />
+    <Content Remove="wwwroot\assets\img\bg\project__one__bg__01.png" />
+    <Content Remove="wwwroot\assets\img\bg\project__one__bg__02.png" />
+    <Content Remove="wwwroot\assets\img\bg\project__one__bg__03.png" />
+    <Content Remove="wwwroot\assets\img\blog\blog__page__01.png" />
+    <Content Remove="wwwroot\assets\img\blog\blog__page__02.png" />
+    <Content Remove="wwwroot\assets\img\blog\blog__page__03.png" />
+    <Content Remove="wwwroot\assets\img\blog\blog__page__04.png" />
+    <Content Remove="wwwroot\assets\img\blog\blog__page__05.png" />
+    <Content Remove="wwwroot\assets\img\blog\blog__page__06.png" />
+    <Content Remove="wwwroot\assets\img\blog\comment_-pic__01.png" />
+    <Content Remove="wwwroot\assets\img\blog\comment_-pic__02.png" />
+    <Content Remove="wwwroot\assets\img\blog\comment_-pic__03.png" />
+    <Content Remove="wwwroot\assets\img\blog\home__one__blog__01.jpg" />
+    <Content Remove="wwwroot\assets\img\blog\home__one__blog__02.jpg" />
+    <Content Remove="wwwroot\assets\img\blog\home__three__blog__01.png" />
+    <Content Remove="wwwroot\assets\img\blog\home__three__blog__02.png" />
+    <Content Remove="wwwroot\assets\img\blog\recent__blog__01.png" />
+    <Content Remove="wwwroot\assets\img\blog\recent__blog__02.png" />
+    <Content Remove="wwwroot\assets\img\blog\recent__blog__03.png" />
+    <Content Remove="wwwroot\assets\img\contact\home__five__contact.png" />
+    <Content Remove="wwwroot\assets\img\contact\map__01.png" />
+    <Content Remove="wwwroot\assets\img\feature\product__01.png" />
+    <Content Remove="wwwroot\assets\img\feature\product__02.png" />
+    <Content Remove="wwwroot\assets\img\feature\product__03.png" />
+    <Content Remove="wwwroot\assets\img\hero\about__banner__01.png" />
+    <Content Remove="wwwroot\assets\img\hero\hero__five_bg__01.png" />
+    <Content Remove="wwwroot\assets\img\hero\hero__one__bg__01.png" />
+    <Content Remove="wwwroot\assets\img\hero\hero__two_bg__01.jpg" />
+    <Content Remove="wwwroot\assets\img\hero\hero__two_bg__03.png" />
+    <Content Remove="wwwroot\assets\img\hero\hero__two_bg__04.png" />
+    <Content Remove="wwwroot\assets\img\icon\arrow__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\arrow__02.png" />
+    <Content Remove="wwwroot\assets\img\icon\arrow__02__1.png" />
+    <Content Remove="wwwroot\assets\img\icon\arrow__03.png" />
+    <Content Remove="wwwroot\assets\img\icon\arrow__04.png" />
+    <Content Remove="wwwroot\assets\img\icon\arrow__05.png" />
+    <Content Remove="wwwroot\assets\img\icon\arrow__06.png" />
+    <Content Remove="wwwroot\assets\img\icon\cart__icon.svg" />
+    <Content Remove="wwwroot\assets\img\icon\cart__icon__02.png" />
+    <Content Remove="wwwroot\assets\img\icon\comment__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\email__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\expand__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\facebook__01.svg" />
+    <Content Remove="wwwroot\assets\img\icon\facebook__02.svg" />
+    <Content Remove="wwwroot\assets\img\icon\linkedin__01.svg" />
+    <Content Remove="wwwroot\assets\img\icon\linkedin__02.svg" />
+    <Content Remove="wwwroot\assets\img\icon\location__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\locker__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\map__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\map__02.png" />
+    <Content Remove="wwwroot\assets\img\icon\map__03.png" />
+    <Content Remove="wwwroot\assets\img\icon\phone__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\play__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\play__02.png" />
+    <Content Remove="wwwroot\assets\img\icon\plus__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\quote__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\quote__02.png" />
+    <Content Remove="wwwroot\assets\img\icon\quote__03.png" />
+    <Content Remove="wwwroot\assets\img\icon\register__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\search__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\sent__01.png" />
+    <Content Remove="wwwroot\assets\img\icon\tik.png" />
+    <Content Remove="wwwroot\assets\img\icon\tik__two.png" />
+    <Content Remove="wwwroot\assets\img\icon\twitter__01.svg" />
+    <Content Remove="wwwroot\assets\img\icon\twitter__02.svg" />
+    <Content Remove="wwwroot\assets\img\logo\header-logo-01.png" />
+    <Content Remove="wwwroot\assets\img\logo\header-logo-02.png" />
+    <Content Remove="wwwroot\assets\img\logo\header-logo-03.png" />
+    <Content Remove="wwwroot\assets\img\partner\home__one__section__three__01.png" />
+    <Content Remove="wwwroot\assets\img\partner\home__one__section__three__02.png" />
+    <Content Remove="wwwroot\assets\img\partner\home__one__section__three__03.png" />
+    <Content Remove="wwwroot\assets\img\partner\home__one__section__three__04.png" />
+    <Content Remove="wwwroot\assets\img\partner\home__one__section__three__05.png" />
+    <Content Remove="wwwroot\assets\img\partner\home__three__section__three__01.png" />
+    <Content Remove="wwwroot\assets\img\partner\home__three__section__three__02.png" />
+    <Content Remove="wwwroot\assets\img\partner\home__three__section__three__03.png" />
+    <Content Remove="wwwroot\assets\img\partner\home__three__section__three__04.png" />
+    <Content Remove="wwwroot\assets\img\project\project__details__01.png" />
+    <Content Remove="wwwroot\assets\img\project\project__details__02.png" />
+    <Content Remove="wwwroot\assets\img\project\project__details__03.png" />
+    <Content Remove="wwwroot\assets\img\project\project__one__01.jpg" />
+    <Content Remove="wwwroot\assets\img\project\project__one__02.jpg" />
+    <Content Remove="wwwroot\assets\img\project\project__one__03.jpg" />
+    <Content Remove="wwwroot\assets\img\project\project__one__04.jpg" />
+    <Content Remove="wwwroot\assets\img\project\project__one__05.jpg" />
+    <Content Remove="wwwroot\assets\img\project\project__v3__01.png" />
+    <Content Remove="wwwroot\assets\img\project\project__v3__02.png" />
+    <Content Remove="wwwroot\assets\img\project\project__v3__03.png" />
+    <Content Remove="wwwroot\assets\img\project\project__v3__04.png" />
+    <Content Remove="wwwroot\assets\img\project\project__v3__05.png" />
+    <Content Remove="wwwroot\assets\img\service\home__one__service__one__01.png" />
+    <Content Remove="wwwroot\assets\img\service\home__one__service__one__02.png" />
+    <Content Remove="wwwroot\assets\img\service\home__one__service__one__03.png" />
+    <Content Remove="wwwroot\assets\img\service\home__one__service__one__04.png" />
+    <Content Remove="wwwroot\assets\img\service\home__one__service__one__05.png" />
+    <Content Remove="wwwroot\assets\img\service\home__one__service__one__06.png" />
+    <Content Remove="wwwroot\assets\img\service\home__one__service__one__07.png" />
+    <Content Remove="wwwroot\assets\img\service\home__one__service__one__08.png" />
+    <Content Remove="wwwroot\assets\img\service\home__three__01.png" />
+    <Content Remove="wwwroot\assets\img\service\home__three__02.png" />
+    <Content Remove="wwwroot\assets\img\service\home__three__03.png" />
+    <Content Remove="wwwroot\assets\img\service\home__three__04.png" />
+    <Content Remove="wwwroot\assets\img\service\home__three__05.png" />
+    <Content Remove="wwwroot\assets\img\service\home__three__06.png" />
+    <Content Remove="wwwroot\assets\img\service\home__three__07.png" />
+    <Content Remove="wwwroot\assets\img\service\home__three__08.png" />
+    <Content Remove="wwwroot\assets\img\service\home__two__service__01.png" />
+    <Content Remove="wwwroot\assets\img\service\home__two__service__02.png" />
+    <Content Remove="wwwroot\assets\img\service\home__two__service__03.png" />
+    <Content Remove="wwwroot\assets\img\service\home__two__service__04.png" />
+    <Content Remove="wwwroot\assets\img\service\home__two__service__05.png" />
+    <Content Remove="wwwroot\assets\img\service\home__two__service__06.png" />
+    <Content Remove="wwwroot\assets\img\service\home__two__service__07.png" />
+    <Content Remove="wwwroot\assets\img\service\home__two__service__08.png" />
+    <Content Remove="wwwroot\assets\img\service\service__details__01.png" />
+    <Content Remove="wwwroot\assets\img\service\service__details__02.png" />
+    <Content Remove="wwwroot\assets\img\service\service__details__03.png" />
+    <Content Remove="wwwroot\assets\img\shape\arrow__shape__01.png" />
+    <Content Remove="wwwroot\assets\img\shape\arrow__shape__02.png" />
+    <Content Remove="wwwroot\assets\img\shape\arrow__shape__03.svg" />
+    <Content Remove="wwwroot\assets\img\shape\arrow__shape__04.png" />
+    <Content Remove="wwwroot\assets\img\shape\arrow__shape__05.png" />
+    <Content Remove="wwwroot\assets\img\shape\arrow__shape__06.png" />
+    <Content Remove="wwwroot\assets\img\shape\home__two__service__01.png" />
+    <Content Remove="wwwroot\assets\img\shape\line__shape__01.svg" />
+    <Content Remove="wwwroot\assets\img\shape\line__shape__02.svg" />
+    <Content Remove="wwwroot\assets\img\shape\line__shape__03.svg" />
+    <Content Remove="wwwroot\assets\img\shape\line__shape__04.svg" />
+    <Content Remove="wwwroot\assets\img\shape\line__shape__05.svg" />
+    <Content Remove="wwwroot\assets\img\shape\pattern__shape__01.png" />
+    <Content Remove="wwwroot\assets\img\shape\pattern__shape__02.png" />
+    <Content Remove="wwwroot\assets\img\shape\pattern__shape__03.png" />
+    <Content Remove="wwwroot\assets\img\shape\pattern__shape__04.png" />
+    <Content Remove="wwwroot\assets\img\shape\pattern__shape__06.png" />
+    <Content Remove="wwwroot\assets\img\shape\service__details__01.png" />
+    <Content Remove="wwwroot\assets\img\shape\star__shape__01.svg" />
+    <Content Remove="wwwroot\assets\img\shape\star__shape__02.png" />
+    <Content Remove="wwwroot\assets\img\shape\star__shape__03.png" />
+    <Content Remove="wwwroot\assets\img\shape\star__shape__04.png" />
+    <Content Remove="wwwroot\assets\img\shape\star__shape__05.png" />
+    <Content Remove="wwwroot\assets\img\social\facebook__01.png" />
+    <Content Remove="wwwroot\assets\img\social\instagram__01.png" />
+    <Content Remove="wwwroot\assets\img\social\linkedin__01.png" />
+    <Content Remove="wwwroot\assets\img\social\twitter__01.png" />
+    <Content Remove="wwwroot\assets\img\subscribe\subscriber__01.jpg" />
+    <Content Remove="wwwroot\assets\img\subscribe\subscriber__02.png" />
+    <Content Remove="wwwroot\assets\img\team\home__one__team__one__01.jpg" />
+    <Content Remove="wwwroot\assets\img\team\home__one__team__one__02.jpg" />
+    <Content Remove="wwwroot\assets\img\team\home__one__team__one__03.jpg" />
+    <Content Remove="wwwroot\assets\img\team\home__one__team__one__04.jpg" />
+    <Content Remove="wwwroot\assets\img\testimonial\home__one__testimonial__01.png" />
+    <Content Remove="wwwroot\assets\img\testimonial\home__one__testimonial__02.png" />
+    <Content Remove="wwwroot\assets\img\testimonial\home__three__01.png" />
+    <Content Remove="wwwroot\assets\img\testimonial\home__three__02.png" />
+    <Content Remove="wwwroot\assets\img\testimonial\home__three__03.png" />
+    <Content Remove="wwwroot\assets\img\testimonial\home__three__04.png" />
+    <Content Remove="wwwroot\assets\img\testimonial\home__three__05.png" />
+    <Content Remove="wwwroot\assets\img\video\home__one__section__two__01.jpg" />
+    <Content Remove="wwwroot\assets\img\video\home__three__section__two__01.jpg" />
+    <Content Remove="wwwroot\assets\img\video\home__two__section__two__01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\assets\img\about\about__five__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\about\home__three__about__05.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\about\home__three__about__06.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\about\home__three__about__07.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\about\home__two__about__01.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\about\home__two__about__02.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\about\home__two__about__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\about\home__two__about__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\bg\about__page__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\bg\home__one__section__one.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\bg\project__one__bg__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\bg\project__one__bg__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\bg\project__one__bg__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\blog__page__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\blog__page__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\blog__page__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\blog__page__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\blog__page__05.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\blog__page__06.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\comment_-pic__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\comment_-pic__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\comment_-pic__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\home__one__blog__01.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\home__one__blog__02.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\home__three__blog__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\home__three__blog__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\recent__blog__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\recent__blog__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\blog\recent__blog__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\contact\home__five__contact.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\contact\map__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\feature\product__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\feature\product__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\feature\product__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\hero\about__banner__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\hero\hero__five_bg__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\hero\hero__one__bg__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\hero\hero__two_bg__01.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\hero\hero__two_bg__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\hero\hero__two_bg__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\arrow__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\arrow__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\arrow__02__1.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\arrow__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\arrow__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\arrow__05.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\arrow__06.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\cart__icon.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\cart__icon__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\comment__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\email__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\expand__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\facebook__01.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\facebook__02.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\linkedin__01.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\linkedin__02.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\location__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\locker__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\map__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\map__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\map__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\phone__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\play__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\play__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\plus__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\quote__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\quote__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\quote__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\register__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\search__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\sent__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\tik.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\tik__two.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\twitter__01.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\icon\twitter__02.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\logo\header-logo-01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\logo\header-logo-02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\logo\header-logo-03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\partner\home__one__section__three__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\partner\home__one__section__three__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\partner\home__one__section__three__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\partner\home__one__section__three__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\partner\home__one__section__three__05.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\partner\home__three__section__three__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\partner\home__three__section__three__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\partner\home__three__section__three__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\partner\home__three__section__three__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__details__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__details__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__details__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__one__01.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__one__02.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__one__03.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__one__04.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__one__05.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__v3__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__v3__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__v3__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__v3__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\project\project__v3__05.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__one__service__one__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__one__service__one__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__one__service__one__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__one__service__one__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__one__service__one__05.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__one__service__one__06.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__one__service__one__07.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__one__service__one__08.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__three__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__three__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__three__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__three__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__three__05.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__three__06.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__three__07.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__three__08.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__two__service__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__two__service__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__two__service__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__two__service__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__two__service__05.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__two__service__06.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__two__service__07.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\home__two__service__08.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\service__details__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\service__details__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\service\service__details__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\arrow__shape__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\arrow__shape__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\arrow__shape__03.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\arrow__shape__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\arrow__shape__05.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\arrow__shape__06.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\home__two__service__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\line__shape__01.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\line__shape__02.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\line__shape__03.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\line__shape__04.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\line__shape__05.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\pattern__shape__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\pattern__shape__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\pattern__shape__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\pattern__shape__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\pattern__shape__06.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\service__details__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\star__shape__01.svg" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\star__shape__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\star__shape__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\star__shape__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\shape\star__shape__05.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\social\facebook__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\social\instagram__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\social\linkedin__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\social\twitter__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\subscribe\subscriber__01.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\subscribe\subscriber__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\team\home__one__team__one__01.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\team\home__one__team__one__02.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\team\home__one__team__one__03.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\team\home__one__team__one__04.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\testimonial\home__one__testimonial__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\testimonial\home__one__testimonial__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\testimonial\home__three__01.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\testimonial\home__three__02.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\testimonial\home__three__03.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\testimonial\home__three__04.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\testimonial\home__three__05.png" />
+    <EmbeddedResource Include="wwwroot\assets\img\video\home__one__section__two__01.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\video\home__three__section__two__01.jpg" />
+    <EmbeddedResource Include="wwwroot\assets\img\video\home__two__section__two__01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="8.0.2" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.0.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="8.0.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Volo.Abp.BasicTheme.SourceCode\src\Volo.Abp.AspNetCore.Mvc.UI.Theme.Kara\Volo.Abp.AspNetCore.Mvc.UI.Theme.Kara.csproj" />
+    <ProjectReference Include="..\MyTheme.Application\MyTheme.Application.csproj" />
+    <ProjectReference Include="..\MyTheme.HttpApi\MyTheme.HttpApi.csproj" />
+    <ProjectReference Include="..\MyTheme.EntityFrameworkCore\MyTheme.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Autofac" Version="9.0.2" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="9.0.2" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Authentication.JwtBearer" Version="9.0.2" />
+    <PackageReference Include="Volo.Abp.Swashbuckle" Version="9.0.2" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Web" Version="9.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.Web.OpenIddict" Version="9.0.2" />
+    <PackageReference Include="Volo.Abp.Identity.Web" Version="9.0.2" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Web" Version="9.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Studio.Client.AspNetCore" Version="0.9.17" />
+  </ItemGroup>
+</Project>

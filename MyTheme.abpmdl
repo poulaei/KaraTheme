@@ -1,0 +1,105 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.BasicTheme": {
+      "version": "9.0.2",
+      "isInstalled": true
+    },
+    "Volo.Abp.Account": {
+      "version": "9.0.2",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "9.0.2",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "9.0.2",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "9.0.2",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "9.0.2",
+      "isInstalled": true
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "9.0.2",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "9.0.2",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "MyTheme.Application": {
+      "path": "src/MyTheme.Application/MyTheme.Application.abppkg",
+      "folder": "src"
+    },
+    "MyTheme.Application.Tests": {
+      "path": "test/MyTheme.Application.Tests/MyTheme.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "MyTheme.Domain.Shared": {
+      "path": "src/MyTheme.Domain.Shared/MyTheme.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "MyTheme.Application.Contracts": {
+      "path": "src/MyTheme.Application.Contracts/MyTheme.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "MyTheme.HttpApi": {
+      "path": "src/MyTheme.HttpApi/MyTheme.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "MyTheme.HttpApi.Client": {
+      "path": "src/MyTheme.HttpApi.Client/MyTheme.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "MyTheme.Web": {
+      "path": "src/MyTheme.Web/MyTheme.Web.abppkg",
+      "folder": "src"
+    },
+    "MyTheme.Web.Tests": {
+      "path": "test/MyTheme.Web.Tests/MyTheme.Web.Tests.abppkg",
+      "folder": "test"
+    },
+    "MyTheme.EntityFrameworkCore.Tests": {
+      "path": "test/MyTheme.EntityFrameworkCore.Tests/MyTheme.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "MyTheme.EntityFrameworkCore": {
+      "path": "src/MyTheme.EntityFrameworkCore/MyTheme.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "MyTheme.TestBase": {
+      "path": "test/MyTheme.TestBase/MyTheme.TestBase.abppkg",
+      "folder": "test"
+    },
+    "MyTheme.Domain.Tests": {
+      "path": "test/MyTheme.Domain.Tests/MyTheme.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "MyTheme.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/MyTheme.HttpApi.Client.ConsoleTestApp/MyTheme.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "MyTheme.DbMigrator": {
+      "path": "src/MyTheme.DbMigrator/MyTheme.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "MyTheme.Domain": {
+      "path": "src/MyTheme.Domain/MyTheme.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
